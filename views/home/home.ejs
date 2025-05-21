@@ -1,0 +1,18 @@
+<div>
+    <section class="banner banner-section" data-scroll-index='0'>
+        <div class="banners-home  banner-desk">
+
+            <% for (let i=0; i < banners.length; i++) { %>
+                <div>
+                    <a href="<%= banners[i].url %>" target="_blank">
+                        <img src="image/banners/<%= banners[i].image %>" clas="img-fluid" alt=""
+                            style="width: 100%;height: 100%;object-fit: cover;">
+                    </a>
+                </div>
+                <% } %>
+        </div>
+
+        <%- include('../components/coletas') %>
+            <%- include('../components/planos') %>
+    </section>
+</div>
