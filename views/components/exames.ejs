@@ -12,10 +12,8 @@
                 </div>
             </div>
             <div class="lista-exames">
-
-
                 <% for (let i=0; i < exames.length; i++) { %>
-                    <div class="col-md-4 col-lg-4 col-sm-12 cada-exame-buscado">
+                    <div class="cada-exame-buscado ">
                         <div class="box-exame">
                             <div class="titulo-exame">
                                 <h2>
@@ -24,14 +22,12 @@
                             </div>
                             <div class="conteudo-exame">
                                 <p>
-                                    <%= exames[i].orientacoes %>
+                                    <%= exames[i].orientacoes.length> 100 ? exames[i].orientacoes.substring(0, 100) +
+                                        '...' : exames[i].orientacoes %>
                                 </p>
-                                <% if (exames[i].orientacoes.length> 100) { %>
-                                    <p>...</p>
-                                    <% } %>
                             </div>
                             <div class="saiba-mais-exame">
-                                <a href=" {{path('web_interna_exame',{'url_exame':exames[i].url})}}">
+                                <a href="{{path('web_interna_exame',{'url_exame':exames[i].url})}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8"
                                         fill="none">
                                         <path
@@ -45,7 +41,7 @@
                     </div>
                     <% } %>
 
-                        <!-- 
+                        <!--
                         {% endfor %}
 
 

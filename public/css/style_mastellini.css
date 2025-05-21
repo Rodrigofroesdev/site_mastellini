@@ -195,8 +195,7 @@
   height: 16px;
   top: 0;
   left: 62px;
-  /* background-color: #00cbec; */
-  background-color: #ffffff;
+  background-color: #00cbec;
   border-radius: 10px;
 }
 
@@ -221,7 +220,7 @@
 } */
 
 .slick-dots li.slick-active button:before {
-  opacity: .75;
+  opacity: 1;
   color: #13718a;
   font-size: 55px;
 }
@@ -650,8 +649,9 @@
 
 .balao-convenios {
   border-radius: 20px;
-  background: #FFF;
-  height: 144px;
+  background: #ffffff;
+  height: 180px;
+  /* Aumentado para dar espaço aos dots */
 }
 
 .img-convenios-cada {
@@ -685,7 +685,7 @@
 
 .convenios-imgs .slick-dots {
   position: absolute !important;
-  bottom: -40px !important;
+  bottom: -60px !important;
   display: block !important;
   width: 100% !important;
   padding: 0 !important;
@@ -721,9 +721,10 @@
 }
 
 .section-exames-buscados {
-  background-color: #fff;
+  background-color: #f3f3f3;
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 8%;
+  /* Aumentado para dar espaço aos dots */
 }
 
 .exames-buscados-titulo h2 {
@@ -762,17 +763,25 @@
 
 .lista-exames {
   padding-top: 5%;
-  display: flex;
+  display: block;
+  position: relative;
+  margin-bottom: 80px;
+  /* Espaço para os dots */
+}
+
+.cada-exame-buscado {
+  padding: 0 10px;
 }
 
 .box-exame {
   border-radius: 15px;
-  background: #F3F3F3;
+  background: #ffffff;
   padding: 5% 10%;
   width: 95%;
   min-height: 200px;
   max-height: 200px;
-  margin-left: 2%;
+  margin: 0 auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .titulo-exame h2 {
@@ -822,9 +831,20 @@
 
 }
 
+.lista-exames .slick-dots {
+  position: absolute !important;
+  bottom: -40px !important;
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  text-align: center;
+}
+
 .lista-exames .slick-dots li.slick-active button:before {
-  opacity: 1.75;
-  color: #fff;
+  opacity: 1;
+  color: #13718a;
   font-size: 49px;
 }
 
@@ -983,8 +1003,8 @@
 }
 
 .lista-unidades .slick-dots li.slick-active button:before {
-  opacity: 1.75;
-  color: #fff;
+  opacity: 1;
+  color: #13718a;
   font-size: 49px;
 }
 

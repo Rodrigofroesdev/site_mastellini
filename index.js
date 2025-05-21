@@ -1,6 +1,7 @@
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts';
 import homeRouter from './routes/homeRoute.js';
+import exameRouter from './routes/exameRoute.js';
 
 const app = express();
 const port = 3001;
@@ -14,6 +15,7 @@ app.use(express.static('public'));
 app.use(expressLayouts);
 
 app.use('/', homeRouter);
+app.use('/exame', exameRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
