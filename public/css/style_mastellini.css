@@ -18,6 +18,10 @@
   display: none;
 }
 
+header.navbar {
+  background-color: #ffffff;
+}
+
 
 .conteudo-header {
   display: flex;
@@ -385,6 +389,7 @@
 .section-coletas {
   padding-top: 5%;
   padding-bottom: 5%;
+  background-color: #ffffff;
 }
 
 .secao-coletas {}
@@ -395,7 +400,6 @@
 }
 
 .text-wrapper-8 {
-
   top: 0;
   left: 0;
   font-family: "DM Sans-Regular", Helvetica;
@@ -406,6 +410,7 @@
   line-height: 52px;
   padding-top: 5%;
   padding-bottom: 5%;
+  background-color: #ffffff;
 }
 
 .primeiro-bloco-coletas {
@@ -1016,6 +1021,7 @@
 .section-duvidas {
   padding-top: 5%;
   padding-bottom: 5%;
+  background-color: #ffffff;
 }
 
 .titulo-duvida h2 {
