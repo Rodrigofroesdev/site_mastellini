@@ -1,5 +1,55 @@
 export default class homeController {
     homeView(req, res) {
+        const exames = [
+            {
+                "id": "1",
+                "title": "Beta Hcg Qualitativo (Hcg)",
+                "url": "beta-hcg-qualitativo-hcg",
+                "orientacoes": "<p>O HCG &eacute; uma glicoprote&iacute;na composta por duas subunidades (alfa e beta)...",
+                "enabled": "1",
+                "created_at": "2024-11-17 14:13:50",
+                "updated_at": "2024-11-17 14:13:50",
+                "deleted_at": null,
+                "observacoes": "<p><strong>TEMPO DE JEJUM:</strong> Jejum n&atilde;o obrigat&oacute;rio... </p>",
+                "prioridade_buscados": null
+            },
+            {
+                "id": "3",
+                "title": "Beta HCG Quantitativo (Beq)",
+                "url": "beta-hcg-quantitativo-beq",
+                "orientacoes": "<p>O HCG &eacute; uma glicoprote&iacute;na composta por duas subunidades (alfa e beta)...",
+                "enabled": "1",
+                "created_at": "2024-11-17 14:16:52",
+                "updated_at": "2024-11-17 14:16:52",
+                "deleted_at": "0000-00-00 00:00:00",
+                "observacoes": "<p><strong>TEMPO DE JEJUM:</strong> Jejum n&atilde;o obrigat&oacute;rio...</p>",
+                "prioridade_buscados": null
+            },
+            {
+                "id": "4",
+                "title": "Colesterol (HDL)",
+                "url": "colesterol-hdl",
+                "orientacoes": "<p>O colesterol &eacute; o principal lip&iacute;deo associado &agrave; doen&ccedil;a vascular...",
+                "enabled": "1",
+                "created_at": "2024-11-17 14:18:59",
+                "updated_at": "2024-11-17 14:18:59",
+                "deleted_at": "0000-00-00 00:00:00",
+                "observacoes": "<p><strong>TEMPO DE JEJUM:</strong> Jejum n&atilde;o obrigat&oacute;rio.</p>",
+                "prioridade_buscados": null
+            },
+            {
+                "id": "5",
+                "title": "Colesterol (LDL)",
+                "url": "colesterol-ldl",
+                "orientacoes": "<p>O colesterol &eacute; o principal lip&iacute;deo associado &agrave; doen&ccedil;a vascular...",
+                "enabled": "1",
+                "created_at": "2024-11-17 14:20:33",
+                "updated_at": "2024-11-17 14:20:33",
+                "deleted_at": "0000-00-00 00:00:00",
+                "observacoes": "<p><strong>TEMPO DE JEJUM:</strong> Jejum n&atilde;o obrigat&oacute;rio...</p>",
+                "prioridade_buscados": null
+            }
+        ]
         const data = [
             {
                 "id": "3",
@@ -115,6 +165,6 @@ export default class homeController {
             }
         ]
 
-        res.render('home/home', { banners: data });
+        res.render('home/home', { banners: data, exames: exames });
     }
 }

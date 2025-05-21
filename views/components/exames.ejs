@@ -1,0 +1,150 @@
+<section class="section-exames-buscados" data-scroll-index='4'>
+    <div class="container">
+        <div class="row">
+            <div class="cabecalho">
+                <div class="col-md-4 col-lg-4 col-sm-12 exames-buscados-titulo">
+                    <h2>Exames mais buscados</h2>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 exames-buscados-ver-todos">
+                    <div class="botao-exames">
+                        <a href="{{path('web_todos_exames')}}">+ ver todos os exames</a>
+                    </div>
+                </div>
+            </div>
+            <div class="lista-exames">
+
+
+                <% for (let i=0; i < exames.length; i++) { %>
+                    <div class="col-md-4 col-lg-4 col-sm-12 cada-exame-buscado">
+                        <div class="box-exame">
+                            <div class="titulo-exame">
+                                <h2>
+                                    <%= exames[i].title %>
+                                </h2>
+                            </div>
+                            <div class="conteudo-exame">
+                                <p>
+                                    <%= exames[i].orientacoes %>
+                                </p>
+                                <% if (exames[i].orientacoes.length> 100) { %>
+                                    <p>...</p>
+                                    <% } %>
+                            </div>
+                            <div class="saiba-mais-exame">
+                                <a href=" {{path('web_interna_exame',{'url_exame':exames[i].url})}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8"
+                                        fill="none">
+                                        <path
+                                            d="M1.04138 7.99988C0.72888 7.99988 0.520384 7.90004 0.312377 7.69989C-0.104127 7.30005 -0.104127 6.70006 0.312377 6.29976L2.70837 3.99965L0.312378 1.70001C-0.104126 1.2997 -0.104126 0.699713 0.312378 0.299877C0.728882 -0.0999588 1.35388 -0.0999587 1.77087 0.299877L4.58337 2.99983C4.89587 3.29982 4.99988 3.59981 4.99988 3.99965C4.99988 4.39949 4.89587 4.69948 4.58337 4.99947L1.77087 7.69942C1.56238 7.89957 1.35437 7.99941 1.04187 7.99941L1.04138 7.99988Z"
+                                            fill="#13718A" />
+                                    </svg>
+                                    Saiba mais
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+
+                        <!-- 
+                        {% endfor %}
+
+
+
+
+                        {# <div class="col-md-4 col-lg-4 col-sm-12 cada-exame-buscado">
+                            <div class="box-exame">
+                                <div class="titulo-exame">
+                                    <h2>Sexagem Fetal</h2>
+                                </div>
+                                <div class="conteudo-exame">
+                                    <p>O teste de sexagem fetal permite a identificação do sexo da criança a partir da
+                                        oitava semana de gravidez. </p>
+                                </div>
+                                <div class="saiba-mais-exame">
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8"
+                                            fill="none">
+                                            <path
+                                                d="M1.04138 7.99988C0.72888 7.99988 0.520384 7.90004 0.312377 7.69989C-0.104127 7.30005 -0.104127 6.70006 0.312377 6.29976L2.70837 3.99965L0.312378 1.70001C-0.104126 1.2997 -0.104126 0.699713 0.312378 0.299877C0.728882 -0.0999588 1.35388 -0.0999587 1.77087 0.299877L4.58337 2.99983C4.89587 3.29982 4.99988 3.59981 4.99988 3.99965C4.99988 4.39949 4.89587 4.69948 4.58337 4.99947L1.77087 7.69942C1.56238 7.89957 1.35437 7.99941 1.04187 7.99941L1.04138 7.99988Z"
+                                                fill="#13718A" />
+                                        </svg>
+                                        Saiba mais
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4 col-sm-12 cada-exame-buscado">
+                            <div class="box-exame">
+                                <div class="titulo-exame">
+                                    <h2>Sexagem Fetal</h2>
+                                </div>
+                                <div class="conteudo-exame">
+                                    <p>O teste de sexagem fetal permite a identificação do sexo da criança a partir da
+                                        oitava semana de gravidez. </p>
+                                </div>
+                                <div class="saiba-mais-exame">
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8"
+                                            fill="none">
+                                            <path
+                                                d="M1.04138 7.99988C0.72888 7.99988 0.520384 7.90004 0.312377 7.69989C-0.104127 7.30005 -0.104127 6.70006 0.312377 6.29976L2.70837 3.99965L0.312378 1.70001C-0.104126 1.2997 -0.104126 0.699713 0.312378 0.299877C0.728882 -0.0999588 1.35388 -0.0999587 1.77087 0.299877L4.58337 2.99983C4.89587 3.29982 4.99988 3.59981 4.99988 3.99965C4.99988 4.39949 4.89587 4.69948 4.58337 4.99947L1.77087 7.69942C1.56238 7.89957 1.35437 7.99941 1.04187 7.99941L1.04138 7.99988Z"
+                                                fill="#13718A" />
+                                        </svg>
+                                        Saiba mais
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4 col-sm-12 cada-exame-buscado">
+                            <div class="box-exame">
+                                <div class="titulo-exame">
+                                    <h2>Sexagem Fetal</h2>
+                                </div>
+                                <div class="conteudo-exame">
+                                    <p>O teste de sexagem fetal permite a identificação do sexo da criança a partir da
+                                        oitava semana de gravidez. </p>
+                                </div>
+                                <div class="saiba-mais-exame">
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8"
+                                            fill="none">
+                                            <path
+                                                d="M1.04138 7.99988C0.72888 7.99988 0.520384 7.90004 0.312377 7.69989C-0.104127 7.30005 -0.104127 6.70006 0.312377 6.29976L2.70837 3.99965L0.312378 1.70001C-0.104126 1.2997 -0.104126 0.699713 0.312378 0.299877C0.728882 -0.0999588 1.35388 -0.0999587 1.77087 0.299877L4.58337 2.99983C4.89587 3.29982 4.99988 3.59981 4.99988 3.99965C4.99988 4.39949 4.89587 4.69948 4.58337 4.99947L1.77087 7.69942C1.56238 7.89957 1.35437 7.99941 1.04187 7.99941L1.04138 7.99988Z"
+                                                fill="#13718A" />
+                                        </svg>
+                                        Saiba mais
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4 col-sm-12 cada-exame-buscado">
+                            <div class="box-exame">
+                                <div class="titulo-exame">
+                                    <h2>Sexagem Fetal</h2>
+                                </div>
+                                <div class="conteudo-exame">
+                                    <p>O teste de sexagem fetal permite a identificação do sexo da criança a partir da
+                                        oitava semana de gravidez. </p>
+                                </div>
+                                <div class="saiba-mais-exame">
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8"
+                                            fill="none">
+                                            <path
+                                                d="M1.04138 7.99988C0.72888 7.99988 0.520384 7.90004 0.312377 7.69989C-0.104127 7.30005 -0.104127 6.70006 0.312377 6.29976L2.70837 3.99965L0.312378 1.70001C-0.104126 1.2997 -0.104126 0.699713 0.312378 0.299877C0.728882 -0.0999588 1.35388 -0.0999587 1.77087 0.299877L4.58337 2.99983C4.89587 3.29982 4.99988 3.59981 4.99988 3.99965C4.99988 4.39949 4.89587 4.69948 4.58337 4.99947L1.77087 7.69942C1.56238 7.89957 1.35437 7.99941 1.04187 7.99941L1.04138 7.99988Z"
+                                                fill="#13718A" />
+                                        </svg>
+                                        Saiba mais
+                                    </a>
+                                </div>
+                            </div>
+                        </div> #} -->
+
+            </div>
+        </div>
+    </div>
+
+</section>
