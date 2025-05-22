@@ -1,4 +1,5 @@
 import ExameRepository from "../repositories/exameRepository.js";
+import UnidadeRepository from "../repositories/unidadeRepository.js";
 
 export default class exameController {
     async exameView(req, res) {
@@ -14,9 +15,11 @@ export default class exameController {
     async exameUrl(req, res) {
         const exameRepository = new ExameRepository();
         const exame = await exameRepository.exame(req.params.url);
-        if (exame != null) {
-            return res.render('exame/exameurl', { exame: exame, hideHeader: false });
+        const unidadeRepository = new UnidadeRepository();
+        const unidades = await unidadeRepository.unidades();
+        if (exame != null && unidades != null) {
+            return res.render('exame/exameurl', { exame: exame, hideHeader: false, unidades: unidades });
         }
-        res.render('exame/exameurl', { exame: [], hideHeader: false });
+        res.render('exame/exameurl', { exame: [], hideHeader: false, unidades: [] });
     }
 }
