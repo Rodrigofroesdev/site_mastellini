@@ -13,43 +13,45 @@
                         <div class="col-md-8 col-lg-8 col-12 faleconosco-conteudo-orientacoes">
                             <p>
                                 Deixe seus dados e dúvidas, e entraremos em contato em até 24 horas. <br><br>
-                                Em caso de urgência, ligue para <b>(18) 3928-4938</b> ou WhatsApp <b>(18) 99735-5652.</b>
+                                Em caso de urgência, ligue para <b>(18) 3928-4938</b> ou WhatsApp <b>(18)
+                                    99735-5652.</b>
                             </p>
                         </div>
 
                         <div class="div-formulario">
-                            <form action="{{path('web_fale_conosco_send')}}" method="post">
+                            <form id="form-fale-conosco">
                                 <div class="form-row">
                                     <div class="form-group col-md-12 col-lg-12 col-12">
                                         <label for="iName">Nome:<span>*</span></label>
-                                        <input type="text" class="form-control" id="iName" name="iName">
+                                        <input type="text" class="form-control" id="iName" name="iName" required>
                                     </div>
                                 </div>
                                 <div class="form-group div-form-flex">
                                     <div class="form-group col-md-4 col-lg-4 col-12">
                                         <label for="iTelefone">Telefone/Celular:<span>*</span></label>
-                                        <input type="text" class="form-control" id="iTelefone" name="iTelefone">
+                                        <input type="text" class="form-control" id="iTelefone" name="iTelefone"
+                                            required>
                                     </div>
 
                                     <div class="form-group col-md-8 col-lg-8 col-12">
                                         <label for="iEmail">Email:<span>*</span></label>
-                                        <input type="text" class="form-control" id="iEmail" name="iEmail">
+                                        <input type="text" class="form-control" id="iEmail" name="iEmail" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group div-form-flex">
                                     <div class="form-group col-md-7 col-lg-7 col-12">
                                         <label for="iTipoContato">Como prefere ser contactado?:<span>*</span></label>
-                                        <select id="iTipoContato" name="iTipoContato" class="form-control">
+                                        <select id="iTipoContato" name="iTipoContato" class="form-control" required>
                                             <option selected value="Telefone">Telefone</option>
                                             <option value="Email">Email</option>
                                             <option value="Whatsapp">Whatsapp</option>
                                         </select>
-                                        
+
                                     </div>
                                     <div class="form-group col-md-5 col-lg-5 col-12">
                                         <label for="iDescobriu">Como você nos conheceu?:<span>*</span></label>
-                                        <select id="iDescobriu" name="iDescobriu" class="form-control">
+                                        <select id="iDescobriu" name="iDescobriu" class="form-control" required>
                                             <option selected value="Internet">Internet</option>
                                             <option value="Indicação">Indicação</option>
                                             <option value="Google">Google</option>
@@ -59,12 +61,13 @@
 
                                 <div class="form-group div-form-flex">
                                     <div class="form-group col-md-12 col-lg-12 col-12">
-                                    <label for="iMsg">Mensagem:<span>*</span></label>
-                                        <textarea class="form-control" id="iMsg" name="iMsg" rows="10"></textarea>
-                                    </div>                                    
+                                        <label for="iMsg">Mensagem:<span>*</span></label>
+                                        <textarea class="form-control" id="iMsg" name="iMsg" rows="10"
+                                            required></textarea>
+                                    </div>
                                 </div>
-                                
-                                <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+
+                                <button type="button" class="btn btn-primary btn-enviar">Enviar mensagem</button>
                             </form>
 
                         </div>
@@ -79,21 +82,24 @@
                                 <p>Cobertura de Convênios</p>
                             </div>
                             <div class="div-subdescricao-interna-exames">
-                                <p>Para informações sobre a cobertura do convênio, consulte nossa Central de Atendimento pelo WhatsApp.</p>
+                                <p>Para informações sobre a cobertura do convênio, consulte nossa Central de Atendimento
+                                    pelo WhatsApp.</p>
                             </div>
 
                             <div class="div-descricao-interna-exames">
                                 <p>Preços e Pagamento Particular</p>
                             </div>
                             <div class="div-subdescricao-interna-exames">
-                                <p>Você sabia que o Laboratório Mastellini oferece parcelamento em até 10x sem juros e condições especiais para pagamento particular?</p>
+                                <p>Você sabia que o Laboratório Mastellini oferece parcelamento em até 10x sem juros e
+                                    condições especiais para pagamento particular?</p>
                             </div>
 
                             <div class="div-descricao-interna-exames">
                                 <p>Dúvidas sobre preparo de exames</p>
                             </div>
                             <div class="div-subdescricao-interna-exames">
-                                <p>Envie uma mensagem para nosso WhatsApp e descubra o procedimento adequado para realizar o seu exame sem complicações.</p>
+                                <p>Envie uma mensagem para nosso WhatsApp e descubra o procedimento adequado para
+                                    realizar o seu exame sem complicações.</p>
                             </div>
 
                             <div class="botoes-lateral-fale-conosco">
@@ -102,25 +108,30 @@
                                 </div>
 
                                 <div class="div-botao-descricao-interna-fale-conosco-unidades">
-                                    <a href="{{path('web_todas_unidades')}}">Ver a unidade mais próxima</a>
+                                    <a href="/unidades">Ver a unidade mais próxima</a>
                                 </div>
 
                             </div>
 
-                        </div>
 
-                        <div class="box-descricao-interna-exames">
-                            <div class="div-subdescricao-interna-exames">
-                                <p>Você também pode utilizar o e-mail abaixo para registrar suas reclamações: <br><br>
+                            <div class="div-subdescricao-interna-exames mt-5">
+                                <p style="font-size: 12px;">Você também pode utilizar o e-mail abaixo para registrar
+                                    suas reclamações:
+                                    <br><br>
 
                                     <b>reclameaqui@laboratoriomastellini.com.br</b>
                                 </p>
                             </div>
 
+
+
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script src="/js/fale-conosco.js"></script>

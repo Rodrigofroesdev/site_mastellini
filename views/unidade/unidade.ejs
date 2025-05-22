@@ -93,17 +93,17 @@
                                     </div>
                                     <div class="col-11 bloco-texto">
                                         <p>
-                                            <%= unidades[i].atendimento %>
+                                            <%- unidades[i].atendimento %>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="box-btn-unidades">
                                 <div class="col-6 btn-ligar-unidade">
-                                    <a href="tel:+55{{formatNumberTel(unid.telefone)}}">Ligar agora</a>
+                                    <a href="tel:+55<%= unidades[i].telefone %>">Ligar agora</a>
                                 </div>
                                 <div class="col-5 btn-whats-unidade">
-                                    <a href="https://wa.me/55{{formatNumberTel(unid.whatsapp)}}">WhatsApp</a>
+                                    <a href="https://wa.me/55<%= unidades[i].whatsapp %>">WhatsApp</a>
                                 </div>
                             </div>
                         </div>

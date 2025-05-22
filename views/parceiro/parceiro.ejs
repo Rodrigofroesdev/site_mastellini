@@ -296,54 +296,55 @@
 
 
             <div class="div-formulario-busca-vaga">
-                <form>
+                <form id="form-trabalhe-conosco" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-md-5 col-lg-5 col-12">
                             <label for="iName">Nome:<span>*</span></label>
-                            <input type="text" class="form-control" id="iName" name="iName">
+                            <input type="text" class="form-control" id="iName" name="iName" required>
                         </div>
 
                         <div class="form-group col-md-3 col-lg-3 col-12">
                             <label for="iTelefone">Telefone/Celular:<span>*</span></label>
-                            <input type="text" class="form-control" id="iTelefone" name="iTelefone">
+                            <input type="text" class="form-control" id="iTelefone" name="iTelefone" required>
                         </div>
                         <div class="form-group col-md-4 col-lg-4 col-12">
                             <label for="iEmail">Email:<span>*</span></label>
-                            <input type="text" class="form-control" id="iEmail" name="iEmail">
+                            <input type="email" class="form-control" id="iEmail" name="iEmail" required>
                         </div>
                     </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-2 col-lg-2 col-12">
                             <label for="iEstado">Estado:<span>*</span></label>
-                            <select id="iEstado" class="form-control">
-                                <option selected value="SP">SP</option>
-                                <option value="ES">ES</option>
+                            <select id="iEstado" class="form-control" name="iEstado" required>
+                                <option value="">Selecione</option>
+                                <option value="SP">SP</option>
+                                <option value="SC">SC</option>
                             </select>
                         </div>
                         <div class="form-group col-md-4 col-lg-4 col-12">
                             <label for="iCidade">Cidade:<span>*</span></label>
-                            <input type="text" class="form-control" id="iCidade" name="iCidade">
+                            <input type="text" class="form-control" id="iCidade" name="iCidade" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-6 col-12">
-                            <label for="iFile">Curriculo<span>*</span></label>
-                            <input class="form-control" type="file" id="iFile" name="iFile">
+                            <label for="iFile">Currículo:<span>*</span></label>
+                            <input class="form-control" type="file" id="iFile" name="iFile" required>
                         </div>
-
-
-
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-12 col-lg-12 col-12">
                             <label for="iMsg">Mensagem:<span>*</span></label>
-                            <textarea class="form-control" id="iMsg" rows="10"></textarea>
+                            <textarea class="form-control" id="iMsg" name="iMsg" rows="10" required></textarea>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                    <button class="btn btn-primary btn-enviar">Enviar mensagem</button>
                 </form>
+
 
             </div>
         </div>
     </div>
+    <script src="/js/parceiro.js"></script>
 </section>

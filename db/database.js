@@ -9,10 +9,10 @@ export default class Database {
 
     constructor() {
         this.#conexao = mysql.createPool({
-            host: '193.203.175.123',
-            database: 'u497128498_mastellini_tes',
-            user: 'u497128498_mastellini_tes',
-            password: 'Kagura070603@fer',
+            host: process.env.HOSTDB,
+            database: process.env.DATABASEDB,
+            user: process.env.USERDB,
+            password: process.env.PASSDB,
             waitForConnections: true,
             connectionLimit: 10,
             queueLimit: 0

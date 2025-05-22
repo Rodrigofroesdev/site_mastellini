@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mastellini-app
+    restart: always
+    env_file: .env
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./uploads:/usr/src/app/uploads
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: mastellini-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./public:/usr/src/app/public
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

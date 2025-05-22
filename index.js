@@ -8,9 +8,13 @@ import quemsomosRouter from './routes/quemsomosRoute.js';
 import faleconoscoRouter from './routes/faleconosco.js';
 import parceiroRouter from './routes/parceiroRoute.js';
 import convenioRouter from './routes/convenioRoute.js';
+import trabalheconoscoRouter from './routes/trabalheconoscoRoute.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const port = 3001;
+const porta = process.env.PORT;
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -28,7 +32,8 @@ app.use('/quem-somos', quemsomosRouter);
 app.use('/fale-conosco', faleconoscoRouter);
 app.use('/parceiro', parceiroRouter);
 app.use('/convenios', convenioRouter);
+app.use('/trabalhe-conosco', trabalheconoscoRouter);
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+app.listen(porta, () => {
+    console.log(`Server is running on http://localhost:${porta}`);
 });

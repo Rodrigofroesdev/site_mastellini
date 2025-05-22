@@ -5,7 +5,6 @@ export default class exameController {
     async exameView(req, res) {
         const exameRepository = new ExameRepository();
         const exames = await exameRepository.exames();
-        console.log(exames);
         if (exames != null) {
             return res.render('exame/exame', { exames: exames, hideHeader: false });
         }

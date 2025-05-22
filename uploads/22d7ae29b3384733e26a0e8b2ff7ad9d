@@ -1,0 +1,66 @@
+Problemas Encontrados
+
+1. Singleton Ausente na Classe de Conexão Database:
+   Atualmente, o código cria uma nova instância da conexão com o banco de dados toda vez que CursoModel é usado. Isso acontece por causa do código abaixo:
+
+   import Database from '../db/database.js';
+   const banco = new Database();
+
+   Isso abre a possibilidade de várias conexões ao banco, o que consome recursos e pode causar problemas de desempenho.
+
+2. Instanciação do Banco em Cada Uso do CursoModel:
+   Em CursoModel, a conexão é chamada diretamente sem garantia de uma única instância, o que não respeita o padrão Singleton.
+
+
+
+Correção Proposta
+
+Para resolver isso, implementamos o padrão Singleton na classe Database, garantindo que a conexão ao banco de dados seja única. Aqui está a implementação sugerida:
+
+Alteração na Classe Database
+
+
+export default class Database {
+    static instance = null;
+
+    constructor() {
+        if (Database.instance) return Database.instance;
+        this.connection = this.#connectToDatabase();
+        Database.instance = this; 
+    }
+
+    #connectToDatabase() {
+    }
+
+    async ExecutaComando(sql, params = []) {
+    }
+}
+
+Alteração na Classe CursoModel
+
+Agora, CursoModel usa a instância única da classe Database:
+
+javascript
+import Database from '../db/database.js';
+
+export default class CursoModel {
+    #id;
+    #nome;
+    #valor;
+    static banco = new Database();
+
+    async listar() {
+        let sql = "SELECT * FROM tb_curso";
+        return await CursoModel.banco.ExecutaComando(sql);
+    }
+
+    async obter(id) {
+        let sql = `SELECT * FROM tb_curso WHERE cur_id = ?`;
+        return await CursoModel.banco.ExecutaComando(sql, [id]);
+    }
+}
+
+Benefícios da Correção
+
+- Redução de Sobrecarga:** Com apenas uma conexão, reduzimos o consumo de recursos e evitamos problemas de desempenho.
+- Consistência e Escalabilidade:** Facilita o gerenciamento de transações e melhora a escalabilidade da aplicação.

@@ -10,7 +10,6 @@ export default class homeController {
 
         const exameRepository = new ExameRepository();
         const e = await exameRepository.examePrioridade();
-        console.log(e);
         if (bannersDesk != null && bannersMobile != null && e != null) {
             return res.render('home/home', { bannersDesk: bannersDesk, bannersMobile: bannersMobile, exames: e, hideHeader: false });
         } else {
