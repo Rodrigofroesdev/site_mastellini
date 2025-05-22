@@ -17,6 +17,7 @@
     <link rel="stylesheet" href='css/style_mastellini.css'>
     <link rel="stylesheet" href='css/style_mastellini_exames.css'>
     <link rel="stylesheet" href='css/main.css'>
+    <link rel="stylesheet" href='css/responsive.css'>
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
@@ -31,18 +32,23 @@
 </head>
 
 <body class="body">
-    <header class="container">
-        <%- include('components/header') %>
-    </header>
-    <nav class="container">
-        <%- include('components/navbar') %>
-    </nav>
-    <main>
-        <%- body %>
-    </main>
-    <footer>
-        <%- include('components/footer') %>
-    </footer>
+    <% if (!hideHeader) { %>
+        <header class="container">
+            <%- include('components/header') %>
+                <nav class="container">
+                    <%- include('components/navbar') %>
+                </nav>
+                <%- include('components/mobile-navbar') %>
+        </header>
+    <% } %>
+
+
+            <main>
+                <%- body %>
+            </main>
+            <footer>
+                <%- include('components/footer') %>
+            </footer>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

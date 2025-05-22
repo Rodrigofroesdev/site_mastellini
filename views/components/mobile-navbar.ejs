@@ -1,0 +1,61 @@
+<div class="mobile-navbar nav-mobile">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 img-logo-topo-mobile">
+                <img src="image/mastellini_logotipo.png" alt="Mastellini" class="img-fluid">
+            </div>
+            <div class="col-4 hamburger-container">
+                <button class="hamburger-button" id="hamburger-toggle">
+                    <span class="hamburger-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mobile-menu-items">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/exames">Exames</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/unidades">Unidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/coletas">Coletas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/quem-somos">Quem somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/fale-conosco">Fale conosco</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 mobile-buttons">
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <a href="{{path('web_todas_unidades')}}" class="btn btn-outline-primary btn-block">
+                                Nossas unidades
+                            </a>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <a href="{{path('web_parceiro')}}" class="btn btn-info btn-block">
+                                Seja parceiro
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a href="{{retornaLinkAreaRestrita()}}" class="btn btn-primary btn-block">
+                                Consultar resultado
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
