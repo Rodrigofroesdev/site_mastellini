@@ -6,8 +6,8 @@ export default class unidadeController {
         const unidades = await response.unidades();
         if (unidades != null) {
             console.log(unidades);
-            return res.render('unidade/unidade', { unidades: unidades });
+            return res.render('unidade/unidade', { unidades: unidades, hideHeader: false });
         }
-        res.render('unidade/unidade', { unidades: [] });
+        res.render('unidade/unidade', { unidades: [], hideHeader: false });
     }
 }

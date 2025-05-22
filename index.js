@@ -6,6 +6,8 @@ import unidadeRouter from './routes/unidadeRoute.js';
 import coletaRouter from './routes/coletaRoute.js';
 import quemsomosRouter from './routes/quemsomosRoute.js';
 import faleconoscoRouter from './routes/faleconosco.js';
+import parceiroRouter from './routes/parceiroRoute.js';
+import convenioRouter from './routes/convenioRoute.js';
 
 const app = express();
 const port = 3001;
@@ -24,6 +26,8 @@ app.use('/unidades', unidadeRouter);
 app.use('/coletas', coletaRouter);
 app.use('/quem-somos', quemsomosRouter);
 app.use('/fale-conosco', faleconoscoRouter);
+app.use('/parceiro', parceiroRouter);
+app.use('/convenios', convenioRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
