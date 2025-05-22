@@ -19,13 +19,14 @@
 
     .secao-exames-exibicao {
       display: flex;
+      flex-wrap: nowrap;
     }
 
     .exames-exibicao-lista-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 5px;
-      width: 100%;
+      gap: 15px;
+      width: 75%;
       margin-bottom: 2rem;
       padding-right: 3%;
     }
@@ -59,12 +60,20 @@
       flex-shrink: 0;
       border-radius: 12px;
       background: #F3F3F3;
-      max-width: 98%;
+      max-width: 100%;
       text-align: center;
       margin-bottom: 3%;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .posicao-cada-exame {}
+    .cada-exame-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
 
     .cada-exame-box p {
       color: #13718A;
@@ -79,18 +88,18 @@
 
     .cada-exame-box a {
       text-decoration: none;
+      width: 100%;
     }
-
-    .div-box-descricao-posicao {}
 
     .div-box-descricao-posicao .box-descricao-exames {
       border-radius: 12px;
       background: #13718A;
-      max-width: 95%;
+      max-width: 100%;
       display: flex;
       flex-wrap: wrap;
       padding: 15%;
-
+      gap: 10px;
+      margin-left: 10px;
     }
 
     .div-descricao-exames p {
@@ -280,12 +289,18 @@
     .div-box-descricao-posicao .box-descricao-interna-exames {
       border-radius: 12px;
       background: #13718A;
-      max-width: 95%;
+      max-width: 100%;
       display: flex;
       flex-wrap: wrap;
       padding: 15%;
       margin-top: 10%;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
 
+    .div-box-descricao-posicao .box-descricao-interna-exames:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .div-descricao-interna-exames p {
@@ -700,7 +715,7 @@
     /* FALE CONOSCO */
     .secao-interna-fale-conosco {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
 
@@ -708,6 +723,10 @@
       background-color: #FFF;
       padding-bottom: 5%;
       padding-top: 5%;
+    }
+
+    .bloco-conteudo-fale-conosco {
+      padding-right: 20px;
     }
 
     .titulo-fale-conosco h2 {
@@ -1230,9 +1249,82 @@
 
 
 
+    @media (max-width: 992px) {
+
+      /* TODOS EXAMES */
+      .exames-exibicao-lista-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        width: 70%;
+      }
+
+      .div-box-descricao-posicao {
+        width: 30%;
+      }
+
+      .div-box-descricao-posicao .box-descricao-exames {
+        padding: 20px;
+      }
+
+      .div-descricao-exames p {
+        font-size: 20px;
+      }
+
+      .div-subdescricao-exames p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      /* EXAMES */
+      .secao-exames-exibicao {
+        flex-direction: column;
+      }
+
+      .exames-exibicao-lista-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        width: 100%;
+        padding-right: 0;
+      }
+
+      .cada-exame-box p {
+        font-size: 20px;
+      }
+
+      .div-box-descricao-posicao {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+      }
+
+      .div-box-descricao-posicao .box-descricao-exames {
+        max-width: 100%;
+        padding: 30px;
+      }
+
+      /* FALE CONOSCO */
+      .secao-interna-fale-conosco {
+        flex-direction: column;
+      }
+
+      .bloco-conteudo-fale-conosco {
+        padding-right: 0;
+        width: 100%;
+      }
+
+      .div-box-descricao-posicao .box-descricao-interna-exames {
+        padding: 30px;
+        max-width: 100%;
+      }
+    }
+
     @media (max-width:480px) {
 
       /* TODOS EXAMES */
+      .exames-exibicao-lista-grid {
+        grid-template-columns: 1fr;
+      }
+
       .div-box-descricao-posicao .box-descricao-exames {
         max-width: 100%;
       }
@@ -1425,7 +1517,22 @@
         min-height: auto !important;
       }
 
+      /* FALE CONOSCO */
+      .secao-interna-fale-conosco {
+        flex-direction: column;
+      }
 
+      .bloco-conteudo-fale-conosco {
+        padding-right: 0;
+        width: 100%;
+      }
 
+      .div-box-descricao-posicao {
+        margin-top: 30px;
+        width: 100%;
+      }
 
+      .div-box-descricao-posicao .box-descricao-interna-exames {
+        padding: 30px;
+      }
     }
