@@ -975,6 +975,9 @@ header.navbar {
   background: #25D366;
   text-align: center;
   padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-whats-unidade a {
@@ -985,6 +988,7 @@ header.navbar {
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
+
 }
 
 .lista-unidades {
