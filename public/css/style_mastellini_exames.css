@@ -19,10 +19,20 @@
 
     .secao-exames-exibicao {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      justify-content: flex-start;
     }
+
+    .exames-exibicao-lista-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 5px;
+      width: 100%;
+      margin-bottom: 2rem;
+      padding-right: 3%;
+    }
+
+
+
+
 
     .subtitulo-todos-exames p {
       color: #565656;
