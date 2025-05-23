@@ -34,6 +34,15 @@ app.use('/parceiro', parceiroRouter);
 app.use('/convenios', convenioRouter);
 app.use('/trabalhe-conosco', trabalheconoscoRouter);
 
+app.use((req, res, next) => {
+    res.status(404).render('404');
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).render('500');
+});
+
 app.listen(porta, () => {
     console.log(`Server is running on http://localhost:${porta}`);
 });
