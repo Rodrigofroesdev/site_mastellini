@@ -18,6 +18,7 @@ const porta = process.env.PORT;
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
+app.set('layout', 'layout');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -35,12 +36,12 @@ app.use('/convenios', convenioRouter);
 app.use('/trabalhe-conosco', trabalheconoscoRouter);
 
 app.use((req, res, next) => {
-    res.status(404).render('404', { hideHeader: true });
+    res.status(404).render('404', { layout: false });
 });
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).render('500', { hideHeader: true });
+    res.status(500).render('500', { layout: false });
 });
 
 app.listen(porta, () => {
