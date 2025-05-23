@@ -35,12 +35,12 @@ app.use('/convenios', convenioRouter);
 app.use('/trabalhe-conosco', trabalheconoscoRouter);
 
 app.use((req, res, next) => {
-    res.status(404).render('404');
+    res.status(404).render('404', { hideHeader: true });
 });
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).render('500');
+    res.status(500).render('500', { hideHeader: true });
 });
 
 app.listen(porta, () => {
