@@ -103,7 +103,8 @@
                                     <a href="tel:+55<%= unidades[i].telefone %>">Ligar agora</a>
                                 </div>
                                 <div class="col-6 btn-whats-unidade">
-                                    <a href="https://wa.me/55<%= unidades[i].whatsapp %>">WhatsApp</a>
+                                    <a href="https://wa.me/55<%= unidades[i].whatsapp.replace('(', '').replace(')', '').replace(' ', '').replace('-', '') %>"
+                                        target="_blank">WhatsApp</a>
                                 </div>
                             </div>
                         </div>
